@@ -8,10 +8,11 @@ class Greeting extends Component {
     render() {
         return (
             <div>
-                <h1>Greetings {this.props.name}</h1>
+                <h1>Greetings {this.props.name}, you are {props.age} years old.</h1>
+                <button onClick={props.callback} > Click Me </button>
             </div>
         )
     }
 }
 
-export default Greeting
+export default Greeting;
