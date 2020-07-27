@@ -1,0 +1,20 @@
+Steps to get this project running.
+
+Create our react app and install everything we need.
+Navigate to the desired project folder.
+$ npx create-react-app .
+
+Install tailwind, postcss, and autoprefixer
+$ npm i tailwindcss postcss-cli autoprefixer
+
+Initialize our TailwindCSS. Will create our tailwind.config.js file.
+$ npx tailwind init
+
+Configure out PostCSS. Create a postcss.config.js file in the root directory.
+Add:
+  module.exports = {
+      plugins: [
+          require('tailwindcss'),
+          require('autoprefixer')
+      ]
+  };
