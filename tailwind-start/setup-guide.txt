@@ -10,6 +10,9 @@ $ npm i tailwindcss postcss-cli autoprefixer
 Initialize our TailwindCSS. Will create our tailwind.config.js file.
 $ npx tailwind init
 
+Get the Tailwind CSS IntelliSense extension in VS Code by Brad Cornes.
+If this stops working when you switch workspaces, just disable/enable or Developer: Reload Window.
+
 Configure out PostCSS. Create a postcss.config.js file in the root directory.
 Add:
   module.exports = {
@@ -18,3 +21,30 @@ Add:
           require('autoprefixer')
       ]
   };
+
+Create a folder ("css") and a file inside named "tailwind.css".
+In "tailwind.css" we want to add our tailwind imports.
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+Create custom scripts to compile our tailwind.css.
+Edit your package.json file. Navigate to the scripts section and add:
+  "prestart": "npm run build:tailwind",
+  "prebuild": "npm run build:tailwind",
+  "build:tailwind": "postcss build css/tailwind.css -o src/tailwind.css",
+  "watch:tailwind": "postcss build css/tailwind.css -o src/tailwind.css --watch"
+
+  delete service worker delete logo.svg index.css app.test app.css setuptests
+  in public the two png
+  in the manifest.json, delete the last two icon entries
+
+  delete the last line in index js & and imports too
+  and then clear app.js and have it be just an empty div. also remove the logo&app.css imports
+
+  import './tailwind.js' in our index.js file
+  
+
+  do npm run build:tailwind to build our tailwind.css
+
+  npm start
