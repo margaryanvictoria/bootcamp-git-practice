@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gainsboro;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            color:white;
+            padding: 5px;
+            width: 100px;
+            text-align: left;
+        }
+
+        button:hover {
+            background-color: gray;
+            color: wheat;
+        }
+
+        button:focus {
+            outline-style: none;
+        }
+
+        .button.primary {
+            background-color: cornflowerblue;
+            color:white;
+        }
+
+        .button.primary:hover {
+            background-color: yellowgreen;
+            color: black;
+        }
+
+        .anim-jitter {
+            animation-name: jitter;
+            animation-duration: 500ms;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes jitter {
+            0% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <input id="fname" placeholder="Enter your name" />
+        <button id="submit" class="button primary">Submit</button>
+    </div>
+
+    <script>
+        const submit = document.getElementById("submit");
+
+        submit.addEventListener('click', (ev) => {
+            const fname = document.getElementById("fname");
+
+            if(fname.value===""){
+                console.log("FName is empty!");
+                fname.className="anim-jitter";
+                
+                setTimeout(() => {
+                    fname.className="";
+                }, 500)
+            }
+        })
+    </script>
+</body>
+</html>
