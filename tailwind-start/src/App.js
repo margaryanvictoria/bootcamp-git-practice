@@ -1,11 +1,15 @@
 import React from 'react';
 import ResortExample from './components/ResortExample'
 import InputField from './components/InputField';
+import { ReactComponent as Heart } from './assets/icon-heart.svg'
+import { ReactComponent as Star } from './assets/icon-star.svg'
 
 
 export default function App() {
   return (
-    <InputField />
+    <div className="p-20">
+      <InputField iconStart={Heart} iconEnd={Star} />
+    </div>
   );
 }
 
